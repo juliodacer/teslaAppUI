@@ -11,6 +11,17 @@ import car from "../assets/images/car.png";
 import menuOptions from "../assets/menuOptions";
 import MenuOption from "../components/MenuOption";
 
+const Controls = () => {
+  return (
+    <View style={styles.controls}>
+      <Entypo name="lock" size={26} color="gray" />
+      <MaterialCommunityIcons name="fan" size={26} color="gray" />
+      <FontAwesome5 name="bolt" size={26} color="gray" />
+      <Ionicons name="car-sport-sharp" size={26} color="gray" />
+    </View>
+  );
+};
+
 export default function Page() {
   return (
     <View style={styles.container}>
@@ -21,21 +32,18 @@ export default function Page() {
         </View>
         <FontAwesome name="user-circle" size={30} color="gray" />
       </View>
+
       <Image source={car} style={styles.image} resizeMode="contain" />
 
       {/* Icons flex directions */}
-      <View style={styles.controls}>
-        <Entypo name="lock" size={26} color="gray" />
-        <MaterialCommunityIcons name="fan" size={26} color="gray" />
-        <FontAwesome5 name="bolt" size={26} color="gray" />
-        <Ionicons name="car-sport-sharp" size={26} color="gray" />
-      </View>
+      {/* <Controls /> */}
 
       {/* Menu Options Item */}
       <FlatList
         showsVerticalScrollIndicator={false}
         data={menuOptions}
         renderItem={MenuOption}
+        ListHeaderComponent={Controls}
       />
     </View>
   );

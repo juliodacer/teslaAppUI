@@ -2,10 +2,13 @@ import { View, Text, StyleSheet } from "react-native";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 
 const MenuOption = ({ item }) => {
-  console.log("ITEM", item);
   return (
     <View style={styles.optionRow}>
-      <MaterialCommunityIcons name={item.iconName} size={26} color="gray" />
+      {item.icon ? (
+        <item.icon />
+      ) : (
+        <MaterialCommunityIcons name={item.iconName} size={26} color="gray" />
+      )}
       <Text style={styles.optionText}>{item.name}</Text>
       <MaterialIcons
         name="keyboard-arrow-right"

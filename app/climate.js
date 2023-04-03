@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import climateImage from "../assets/images/climate.png";
 import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 const ClimateScreen = () => {
   const router = useRouter();
@@ -45,17 +46,12 @@ const ClimateScreen = () => {
               name="chevron-right"
               size={30}
               color="gray"
-              onPress={() => setTemperature(temperature - 1)}
+              onPress={() => setTemperature(temperature + 1)}
             />
           </View>
 
           <View style={styles.iconButtonContainer}>
-            <MaterialCommunityIcons
-              name="car-door"
-              size={42}
-              color="gray"
-              onPress={() => setTemperature(temperature + 1)}
-            />
+            <MaterialCommunityIcons name="car-door" size={42} color="gray" />
             <Text style={styles.iconButtonText}>Vent</Text>
           </View>
         </View>

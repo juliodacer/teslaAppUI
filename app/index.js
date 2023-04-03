@@ -35,10 +35,6 @@ export default function Page() {
 
       <Image source={car} style={styles.image} resizeMode="contain" />
 
-      {/* Icons flex directions */}
-      {/* <Controls /> */}
-
-      {/* Menu Options Item */}
       <FlatList
         showsVerticalScrollIndicator={false}
         data={menuOptions}
